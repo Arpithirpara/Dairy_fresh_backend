@@ -46,6 +46,8 @@ app.use('/uploads', express.static(path.join(__dirname, 'src', 'uploads')));
 db();
 
 // ✅ FIX 2: './api/setting' galat tha, '/api/setting' sahi hai
+app.use('/api', userRoute);      // ✅ login/register pehle
+app.use('/api', customer);
 app.use('/api/setting', setting);
 app.use('/api/footer', footer);
 app.use('/api/brand', brand);
@@ -57,12 +59,9 @@ app.use('/api/product', product);
 app.use('/api', address);
 app.use('/api', order);
 app.use('/api', payment);
-app.use('/api/contact',contact);
-app.use('/api/addadmin',Addadmin);
+app.use('/api/contact', contact);
+app.use('/api/addadmin', Addadmin);
 app.use('/api/sub', subscribers);
-app.use('/api', userRoute);
-app.use('/api', customer);
-
 
 
 
