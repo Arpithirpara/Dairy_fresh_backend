@@ -22,7 +22,7 @@ const {
 
 const {
   sendResetPasswordEmail,  // ✅ NAYA
-} = require("./mail.service");
+} = require("./Mail.service");
 
 
 // ================= SEND OTP =================
