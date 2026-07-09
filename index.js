@@ -32,7 +32,7 @@ app.use(express.urlencoded({
 
 // ✅ FIX 1: wildcard '*' nahi, specific origin + credentials true
 app.use(cors({
-  origin: ["https://dairy-fresh-admin.vercel.app", "http://localhost:3000"],
+  origin: ["https://dairy-fresh-admin.vercel.app", "http://localhost:3000","https://dairyfresh-project-714s.vercel.app"],
   credentials: true
 }));
 
