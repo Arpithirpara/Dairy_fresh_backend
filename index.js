@@ -31,9 +31,10 @@ app.use(express.urlencoded({
 }));
 
 // ✅ FIX 1: wildcard '*' nahi, specific origin + credentials true
-app.use(
-  cors()
-);
+app.use(cors({
+  origin: ["https://dairy-fresh-admin.vercel.app", "http://localhost:3000"],
+  credentials: true
+}));
 
 app.use(helmet({
   crossOriginResourcePolicy: { policy: "cross-origin" }
