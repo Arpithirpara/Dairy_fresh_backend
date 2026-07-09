@@ -33,7 +33,7 @@ const upload = multer({
 // ── Upload route ──  /api/product/upload
 router.post('/upload', upload.single('image'), (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'file not found' });
-  res.json({ url: `${process.env.MONGO_URL}/uploads/${req.file.filename}`});
+  res.json({ url: `${process.env.BASE_URL}/uploads/${req.file.filename}`});
 });
 
 // ── Product routes ──
