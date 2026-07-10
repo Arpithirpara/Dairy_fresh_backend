@@ -27,6 +27,7 @@ const {
 
 // ================= SEND OTP =================
 const sendOtpController = async (req, res) => {
+  console.log("🟢 sendOtpController hit");
   try {
     const { email } = req.body;
 
