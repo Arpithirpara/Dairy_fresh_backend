@@ -22,6 +22,7 @@
     "mongoose": "^9.6.3",
     "multer": "^2.1.1",
     "nodemailer": "^8.0.10",
-    "react-toastify": "^11.1.0"
+    "react-toastify": "^11.1.0",
+    "resend": "^6.17.2"
   }
 }

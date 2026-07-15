@@ -1,4 +1,5 @@
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
+const resend = new Resend(process.env.resend_api);
 
 const otpStore = {};
 
@@ -8,19 +9,8 @@ const sendOtp = async (email) => {
 
   otpStore[email] = otp;
 
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",   // ✅ explicit host
-    port: 587,
-  secure: false,              // ✅ true for port 465
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-    family: 4,                  // ✅ ab ye properly apply hoga
-  });
-
-  await transporter.sendMail({
-    from: process.env.EMAIL_USER,
+  await resend.emails.send({
+    from: "DairyFresh <onboarding@resend.dev>",   // testing ke liye ye default domain use kar sakte ho
     to: email,
     subject: "Email Verification OTP",
     html: `
