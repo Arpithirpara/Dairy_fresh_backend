@@ -12,8 +12,9 @@ const auth = require("../middleware/auth.js");
 
 const router = express.Router();
 
-router.get("/", auth, getcart);
 router.post("/", auth, addTocart);
+router.get("/", auth, getcart);
+
 
 router.put("/increase/:id", auth, increaseCart);
 router.put("/decrease/:id", auth, decreaseCart);

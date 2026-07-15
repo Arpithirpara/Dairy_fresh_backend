@@ -15,7 +15,7 @@ router.post("/create", auth, create);
 
 router.get("/", auth, getAll);
 
-router.get("/:id", auth, getById);
+router.get("/:id", auth, getById);  
 
 router.put("/:id", auth, update);
 

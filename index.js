@@ -35,7 +35,7 @@ app.use(express.urlencoded({
 
 // ✅ FIX 1: wildcard '*' nahi, specific origin + credentials true
 app.use(cors({
-  origin: ["https://dairyfresh-project-st58.vercel.app", "http://localhost:3000","https://dairyfresh-project-714s.vercel.app","https://dairy-fresh-admin.vercel.app"],
+  origin: ["https://dairyfresh-project-st58.vercel.app", "http://localhost:3000","https://dairyfresh-project-714s.vercel.app","https://dairy-fresh-admin.vercel.app","http://localhost:3005"],
   credentials: true
 }));
 
@@ -51,7 +51,7 @@ db();
 
 // ✅ FIX 2: './api/setting' galat tha, '/api/setting' sahi hai
 app.use('/api', userRoute);      // ✅ login/register pehle
-app.use('/api', customer);
+app.use('/api/customer', customer);
 app.use('/api/setting', setting);
 app.use('/api/footer', footer);
 app.use('/api/brand', brand);
