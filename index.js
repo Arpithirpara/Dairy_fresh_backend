@@ -68,8 +68,7 @@ app.use('/api/addadmin', Addadmin);
 app.use('/api/sub', subscribers);
 
 
-
-const port = 3002;
+const port = process.env.PORT || 3002;
 app.listen(port, () => {
   console.log(`server is start ${port}`);
 });
